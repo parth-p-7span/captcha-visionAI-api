@@ -34,7 +34,7 @@ class Predict(Resource):
 
         final_output = predictor.findResult(values,operation)
 
-        return jsonify(message="success", result=final_output)
+        return jsonify(message="success",ocr1=text1, ocr2=text2, result=final_output)
 
 
 api.add_resource(Predict, '/predict')
