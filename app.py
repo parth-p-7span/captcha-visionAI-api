@@ -35,7 +35,7 @@ class Predict(Resource):
         text2 = predictor.responseToText(response2)
         values = predictor.getVals(text2, operation)
 
-        question = question + str(values)
+        question = question.strip() + str(values)
 
         final_output = predictor.findResult(values, operation)
 
