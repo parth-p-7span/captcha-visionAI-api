@@ -17,6 +17,10 @@ class Predict(Resource):
     def post(self):
         json_data = request.get_json(force=True)
         img_uri = json_data['uri']
+        
+        predictor = utils.Predictor(api_key='AIzaSyByI4h7HRINmQOKjl92TgtPm9S672qT_tU',
+                                url='https://vision.googleapis.com/v1/images:annotate')
+        
         img_numpy = predictor.readb64(img_uri)
 
         response1 = predictor.sendRequest(img_numpy)
@@ -36,7 +40,5 @@ class Predict(Resource):
 api.add_resource(Predict, '/predict')
 api.add_resource(Index, '/')
 
-if __name__ == '__main__':
-    predictor = utils.Predictor(api_key='AIzaSyByI4h7HRINmQOKjl92TgtPm9S672qT_tU',
-                                url='https://vision.googleapis.com/v1/images:annotate')
+if __name__ == '__main__':    
     app.run()
