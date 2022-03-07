@@ -4,4 +4,8 @@
 ## Endpoint url : [captcha-ocr-api.herokuapp.com/predict](https://captcha-ocr-api.herokuapp.com/predict)
 
 
-## Screenshot : ![](ss.png)
+## Screenshot : 
+![](ss.png)
+
+## Original vs Processed Image :
+![](processed_img.png)
