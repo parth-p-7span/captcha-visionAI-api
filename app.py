@@ -1,6 +1,10 @@
+import os
 from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
 import utils
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 api = Api(app)
@@ -16,7 +20,7 @@ class Predict(Resource):
         return jsonify(message="send a post request...")
 
     def post(self):
-        predictor = utils.Predictor(api_key='AIzaSyByI4h7HRINmQOKjl92TgtPm9S672qT_tU',
+        predictor = utils.Predictor(api_key=os.environ.get('TOKEN'),
                                     url='https://vision.googleapis.com/v1/images:annotate')
         json_data = request.get_json(force=True)
         img_uri = json_data['uri']
