@@ -1,6 +1,14 @@
 # Captcha OCR API
 Python flask API that resolve base64 captcha image. This project uses Google [Vision AI](https://cloud.google.com/vision) API for OCR processing.
 
+
+## Prerequisite
+
+- Python3
+- Flask
+- [OpenCV](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
+- Google APIs
+
 ## Installation
 1. Clone this repository to your workspace
 ```shell
